@@ -140,11 +140,11 @@ android {
     }
 
     defaultConfig {
-        applicationId "chat.rocket.reactnative"
+        applicationId "chat.hivemind"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode VERSIONCODE as Integer
-        versionName "4.11.0"
+        versionName "1.0"
         vectorDrawables.useSupportLibrary = true
         if (isPlay) {
             manifestPlaceholders = [BugsnagAPIKey: BugsnagAPIKey as String]
@@ -153,14 +153,14 @@ android {
     }
 
     signingConfigs {
-        release {
-            if (project.hasProperty('KEYSTORE')) {
-                storeFile file(KEYSTORE)
-                storePassword KEYSTORE_PASSWORD
-                keyAlias KEY_ALIAS
-                keyPassword KEY_PASSWORD
-            }
-        }
+      release {
+          if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+              storeFile file(MYAPP_UPLOAD_STORE_FILE)
+              storePassword MYAPP_UPLOAD_STORE_PASSWORD
+              keyAlias MYAPP_UPLOAD_KEY_ALIAS
+              keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+          }
+      }
     }
     splits {
         abi {
@@ -240,6 +240,7 @@ dependencies {
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
     playImplementation "com.google.firebase:firebase-messaging:18.0.0"
+    implementation platform('com.google.firebase:firebase-bom:25.11.0')
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

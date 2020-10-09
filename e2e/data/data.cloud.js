@@ -1,10 +1,10 @@
 const random = require('./helpers/random');
 const value = random(20);
 const data = {
-    server: 'https://mobile.rocket.chat',
+    server: 'https://rocket.hivemindnetwork.com/',
     adminUser: 'e2e_admin',
     adminPassword: 'p7mFh4yLwCRXSnMvG',
-    alternateServer: 'https://stable.rocket.chat',
+    alternateServer: 'https://rocket.hivemindnetwork.com/',
     users: {
         regular: {
             username: `userone${ value }`,

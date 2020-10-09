@@ -26,6 +26,11 @@ const _OutsideStack = ({ root }) => {
 
 	return (
 		<Outside.Navigator screenOptions={{ ...defaultHeader, ...themedHeader(theme), ...StackAnimation }}>
+			<Outside.Screen
+				name='WorkspaceView'
+				component={WorkspaceView}
+				options={WorkspaceView.navigationOptions}
+			/>
 			{root === ROOT_OUTSIDE ? (
 				<Outside.Screen
 					name='OnboardingView'
@@ -37,11 +42,6 @@ const _OutsideStack = ({ root }) => {
 				name='NewServerView'
 				component={NewServerView}
 				options={NewServerView.navigationOptions}
-			/>
-			<Outside.Screen
-				name='WorkspaceView'
-				component={WorkspaceView}
-				options={WorkspaceView.navigationOptions}
 			/>
 			<Outside.Screen
 				name='LoginView'

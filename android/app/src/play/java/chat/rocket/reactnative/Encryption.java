@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package chat.hivemind;
 
 import android.util.Log;
 import android.util.Base64;

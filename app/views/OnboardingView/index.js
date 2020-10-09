@@ -78,7 +78,7 @@ class OnboardingView extends React.Component {
 	createWorkspace = async() => {
 		logEvent(events.ONBOARD_CREATE_NEW_WORKSPACE);
 		try {
-			await Linking.openURL('https://cloud.rocket.chat/trial');
+			await Linking.openURL('https://rocket.hivemindnetwork.com/');
 		} catch {
 			logEvent(events.ONBOARD_CREATE_NEW_WORKSPACE_F);
 		}

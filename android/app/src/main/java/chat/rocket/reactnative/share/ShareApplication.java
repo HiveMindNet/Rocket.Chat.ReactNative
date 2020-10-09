@@ -1,6 +1,6 @@
-package chat.rocket.reactnative.share;
+package chat.hivemind.share;
 
-import chat.rocket.reactnative.BuildConfig;
+import chat.hivemind.BuildConfig;
 
 import chat.rocket.SharePackage;
 

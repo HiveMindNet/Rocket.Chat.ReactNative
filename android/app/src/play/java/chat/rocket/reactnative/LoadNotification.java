@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package chat.hivemind;
 
 import android.os.Bundle;
 import android.content.Context;

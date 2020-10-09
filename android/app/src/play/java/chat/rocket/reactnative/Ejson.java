@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package chat.hivemind;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.Callback;

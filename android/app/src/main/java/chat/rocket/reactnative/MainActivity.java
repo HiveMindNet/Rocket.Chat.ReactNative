@@ -1,4 +1,4 @@
-package chat.rocket.reactnative;
+package chat.hivemind;
 
 import android.os.Bundle;
 import android.content.Context;
@@ -87,7 +87,7 @@ public class MainActivity extends ReactFragmentActivity {
 
             // Remove all our keys of SharedPreferences
             sharedPreferences.edit().clear().commit();
-          
+
             // Mark migration complete
             defaultMMKV.encode("alreadyMigrated", true);
         }
@@ -121,4 +121,3 @@ public class MainActivity extends ReactFragmentActivity {
         this.sendBroadcast(intent);
     }
 }
-

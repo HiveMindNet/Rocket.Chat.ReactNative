@@ -11,6 +11,7 @@ import { withTheme } from '../../theme';
 import FormContainer, { FormContainerInner } from '../../containers/FormContainer';
 import ServerAvatar from './ServerAvatar';
 import { getShowLoginButton } from '../../selectors/login';
+import { serverRequest } from '../../actions/server';
 
 class WorkspaceView extends React.Component {
 	static navigationOptions = () => ({
@@ -29,6 +30,11 @@ class WorkspaceView extends React.Component {
 		showLoginButton: PropTypes.bool,
 		Accounts_iframe_enabled: PropTypes.bool,
 		inviteLinkToken: PropTypes.string
+	}
+
+	componentDidMount() {
+		const { connectServer } = this.props;
+		connectServer('https://rocket.hivemindnetwork.com/');
 	}
 
 	get showRegistrationButton() {
@@ -115,4 +121,8 @@ const mapStateToProps = state => ({
 	inviteLinkToken: state.inviteLinks.token
 });
 
-export default connect(mapStateToProps)(withTheme(WorkspaceView));
+const mapDispatchToProps = dispatch => ({
+	connectServer: (server, certificate, username, fromServerHistory) => dispatch(serverRequest(server, certificate, username, fromServerHistory)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withTheme(WorkspaceView));

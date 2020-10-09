@@ -101,6 +101,7 @@ class AuthenticationWebView extends React.PureComponent {
 	}, 3000, true)
 
 	onNavigationStateChange = (webViewState) => {
+		console.log('webViewState', webViewState)
 		const url = decodeURIComponent(webViewState.url);
 		const { route } = this.props;
 		const { authType } = route.params;
@@ -120,6 +121,7 @@ class AuthenticationWebView extends React.PureComponent {
 				this.debouncedLogin(payload);
 			}
 		}
+		console.log(`payload ${payload}`)
 
 		if (authType === 'oauth') {
 			if (this.oauthRedirectRegex.test(url)) {

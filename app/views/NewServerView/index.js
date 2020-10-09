@@ -209,7 +209,7 @@ class NewServerView extends React.Component {
 		logEvent(events.NEWSERVER_JOIN_OPEN_WORKSPACE);
 		this.setState({ connectingOpen: true });
 		const { connectServer } = this.props;
-		connectServer('https://open.rocket.chat');
+		connectServer('https://rocket.hivemindnetwork.com/');
 	}
 
 	basicAuth = async(server, text) => {
